@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+      
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">  
+        <link rel="stylesheet" href="css/index.css">
+        <title>Ejemplo reCAPTCHA v2</title>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+        <title>Hello World</title>
+    </head>
+    <body>
+     
+      <form>
+        <!----------------------- Main Container -------------------------->
+     <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        
+      <!----------------------- Login Container -------------------------->
+         <div class="row border rounded-5 p-3 bg-white shadow box-area">
+            <div style="display: none;" class="R7">
+                <h2>
+                    Register now
+                </h2>
+            </div>
+            
+      <!--------------------------- Left Box ----------------------------->
+         <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #10e44f;">
+             <div class="featured-image mb-3">
+              <img src="/www/img/register.png" class="img-fluid" style="width: 250px;">
+             </div>
+             <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Register now!!</p>
+             <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Join us to look for details about your favorite movies.</small>
+         </div> 
+      <!-------------------- ------ Right Box ---------------------------->
+          
+         <div class="col-md-6 right-box">
+            <div class="row align-items-center">
+                 
+                  <div class="input-group mb-3">
+                      <input id="txtFirstName" type="text" name="fName" class="form-control form-control-lg bg-light fs-6" placeholder="First name" required>
+                  </div>
+                  <div class="input-group mb-3">
+                      <input id="txtLastName" type="text" name="lName" class="form-control form-control-lg bg-light fs-6" placeholder="Last name" required>
+                  </div>
+                   
+                  <div class="input-group mb-3">
+                    <input id="txtEmail" type="email" name="correo" class="form-control form-control-lg bg-light fs-6" placeholder="Email" required>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input id="txtAge" type="number" name="age" class="form-control form-control-lg bg-light fs-6" placeholder="Age" required>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input id="txtPassword" type="password" name="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" required>
+                  </div>
+
+                  <div class="input-group mb-3">
+                      <button onclick="saveData()" style="background-color: #10e44f; border-color: #10e44f;" class="btn btn-lg btn-primary w-100 fs-6">Register</button>
+                  </div>
+                  <div class="input-group mb-3">
+                    <button onclick="window.location.href = '/www/index.html' " class="btn btn-lg btn-primary w-100 fs-6">Login</button>
+                </div>
+                  
+                  
+            </div>
+            
+         </div> 
+        </div>
+      </div>
+      </form>
+
+
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="js/register.js"></script>
+      <script src="js/database.js"></script>
+
+    </body>
+</html>
