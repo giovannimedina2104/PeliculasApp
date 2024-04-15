@@ -19,5 +19,10 @@
     "platforms": [
       "browser"
     ]
+  },
+  "dependencies": {
+    "cordova-plugin-battery-status": "^2.0.3",
+    "cordova-plugin-camera": "^7.0.0",
+    "cordova-plugin-geolocation": "^5.0.0"
   }
 }
