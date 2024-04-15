@@ -1,11 +1,15 @@
+<!-- camera.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Search</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Cordova Camera Example</title>
+    <script src="cordova.js"></script>
+    <script src="js/camera.js"></script>
+
     <style>
         body {
             background-image: url('background.jpg'); /* Ruta de tu imagen de fondo */
@@ -20,7 +24,7 @@
         }
         .container{
             margin-top: 20px;
-            margin-left: 20px;
+            margin-left: 10px;
         }
         .content-container {
             background-color: rgba(151, 151, 151, 0.8); /* Color de fondo semi-transparente */
@@ -71,6 +75,7 @@
             background-color: #fff !important; /* Color del ícono del botón toggler del navbar */
         }
     </style>
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -96,60 +101,22 @@
         </div>
     </nav>
     <div class="container">
-        <div class="row mt-5">
-            <div class="col-md-6 offset-md-3">
-                <div class="content-container">
-                    <div class="input-group mb-3">
-                        <input type="text" id="query" class="form-control" placeholder="Enter movie name">
-                        <div class="input-group-append"> 
-                            <button id="searchBtn" class="btn btn-primary" type="button">Search Movie</button>
-                        </div>
-                    </div>
-                    <img src="" class="img-fluid mb-3" id="poster" alt="Movie Poster">
-                    <hr>
-                    <h5 id="movie_name" class="text-primary"></h5>
-                    <p id="movie_desc" class="text-justify"></p>
-                    <p id="original_language" class="font-weight-bold"></p>
-                    <p id="release_date" class="font-italic"></p>
-                </div>
+        <div class="row">
+            <div class="col">
+                <h1 style="color: #fff;">Smile, someone is watching you...</h1>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col">
+                <input type="button" value="Take Photo" onclick="takePicture()">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="" alt="" id="myImage">
             </div>
         </div>
     </div>
-
-    <script>
-        $('#searchBtn').click(function(){
-            let query=$('#query').val();
-
-            $.ajax({
-                url: "https://api.themoviedb.org/3/search/movie",
-                data: {
-                    api_key: "2c848b8b2d96da8da4cc64f627f7263a",
-                    query: query,
-                    include_adult: false,
-                    language: "en-US",
-                    page: 1
-                },
-                headers: {
-                    Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYzg0OGI4YjJkOTZkYThkYTRjYzY0ZjYyN2Y3MjYzYSIsInN1YiI6IjY2MTcxZDJhZmRjMTQ2MDE0ODhkYTBhYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.duenIO66ctqD4GyynRjv0ZhtnWPc6K9QM93uYgSZhfI",
-                    Accept: "application/json"
-                },
-                success: function(data) {
-                $('#movie_name').html(data.results[0].title);
-                $('#movie_desc').html(data.results[0].overview);
-                $('#original_language').html("Original Language: " + data.results[0].original_language);
-                $('#release_date').html("Release Date: " + data.results[0].release_date);
-                $('#poster').attr("src", "https://image.tmdb.org/t/p/w500" + data.results[0].poster_path);
-
-                // Mostrar el elemento #poster solo si la imagen se carga correctamente
-                $('#poster').on('load', function() {
-                    $(this).show();
-                });
-            }
-        });
-            
-        });
-    </script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

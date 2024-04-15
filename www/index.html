@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/index.css">
         <title>Ejemplo reCAPTCHA v2</title>
         <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script src="/www/js/index.js"></script>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
@@ -18,7 +19,7 @@
     </head>
     <body>
      
-      <form action="submit.php" method="post">
+      
         <!----------------------- Main Container -------------------------->
      <div class="container d-flex justify-content-center align-items-center min-vh-100">
       <!----------------------- Login Container -------------------------->
@@ -39,27 +40,34 @@
                        <h2>Hello,Again</h2>
                        <p>We are happy to have you back.</p>
                   </div>
+
+                  <form>
                   <div class="input-group mb-3">
-                      <input type="text" name="nombre" class="form-control form-control-lg bg-light fs-6" placeholder="Email address">
+                      <input id="emailLogin" type="text" name="nombre" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" required>
                   </div>
                   <div class="input-group mb-3">
-                      <input type="password" name="correo" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                      <input id="passwordLogin" type="password" name="correo" class="form-control form-control-lg bg-light fs-6" placeholder="Password" required>
                   </div>
                   
                   <div class="input-group mb-3">
-                      <button class="btn btn-lg btn-primary w-100 fs-6">Login</button>
+                      <button onclick="login(); return false;" class="btn btn-lg btn-primary w-100 fs-6">Login</button>
                   </div>
 
                   
                   
-                  <div class="input-group mb-3">
+                   <!-- <div class="input-group mb-3">
                    <div  id="recaptcha"></div>
                   </div>
+                  <script>
+                    grecaptcha.render("recaptcha", {
+                      sitekey: "6LfSaKwpAAAAACH4EMiRh0CKysMZrdmT2V3EnMAG"
+                    });
+                  </script>  -->
 
- </form>
+                </form>
 
                   <div class="input-group mb-3">
-                    <button onclick="window.location.href = '/www/registro.html' " style="background-color: #10e44f; border-color: #10e44f;" class="btn btn-lg btn-primary w-100 fs-6">Register</button>
+                    <button onclick="window.location.href = '/www/registro.html';" style="background-color: #10e44f; border-color: #10e44f;" class="btn btn-lg btn-primary w-100 fs-6">Register</button>
                 </div>
 
             </div>
@@ -68,17 +76,13 @@
         </div>
       </div>
       
-
+    
       
 
 
 
 
-      <script>
-        grecaptcha.render("recaptcha", {
-          sitekey: "6LfSaKwpAAAAACH4EMiRh0CKysMZrdmT2V3EnMAG"
-        });
-      </script>
+       
 
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>

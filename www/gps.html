@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Hello World</title>
+    
+    <style>
+        body {
+            background-image: url('background.jpg'); /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container, .content-container {
+        border: none !important; /* Eliminar el borde del contenedor */
+        outline: none; /* Eliminar el resaltado de contorno al hacer clic */
+        }
+        .container{
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        .content-container {
+            background-color: rgba(151, 151, 151, 0.8); /* Color de fondo semi-transparente */
+            border: 1px solid #b9b8b8;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            
+        }
+        #poster {
+        display: none; /* Ocultar el elemento por defecto */
+        }
+
+        /* Estilos adicionales para los elementos de texto */
+        .text-primary {
+            color: #0c54a1 !important; /* Color azul para el nombre de la película */
+        }
+
+        .text-justify {
+            text-align: justify; /* Justificar el texto en la descripción */
+        }
+
+        .font-weight-bold {
+            font-weight: bold; /* Texto en negrita para el idioma original */
+        }
+
+        .font-italic {
+            font-style: italic; /* Texto en cursiva para la fecha de lanzamiento */
+        }
+        /* Estilos para el navbar */
+        .navbar {
+            background-color: rgba(151, 151, 151, 0.8) !important; /* Color de fondo semi-transparente del navbar */
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: #fff !important; /* Color de texto de los enlaces del navbar */
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: #0c54a1 !important; /* Color de texto al pasar el cursor sobre los enlaces del navbar */
+        }
+
+        .navbar-light .navbar-toggler {
+            border-color: #fff !important; /* Color del botón toggler del navbar */
+        }
+
+        .navbar-light .navbar-toggler-icon {
+            background-color: #fff !important; /* Color del ícono del botón toggler del navbar */
+        }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="movie.html">Movie Search</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="gps.html">Location<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="camera.html">Camera</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="battery.html">Battery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="network.html">Network Info</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col">
+                    <img src="" alt="" id="myImage">
+                </div>
+                </div>
+        </div>
+
+    
+        <script src="cordova.js"></script>
+        <script src="js/gps.js"></script>
+    </body>
+</html>

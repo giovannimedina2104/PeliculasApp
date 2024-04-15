@@ -47,7 +47,7 @@ function saveData(){
     console.log(usuarios);
     const request = objectStore.add(usuarios);
     request.onsuccess = (event) => {
-      // event.target.result === customer.ssn;
+        window.location.href = "/www/index.html";
     };
   });
     };
