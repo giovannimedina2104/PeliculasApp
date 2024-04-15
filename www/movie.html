@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="query"/><button id="searchBtn">Search Movie</button> <br><br>
+        <img src="" class="poster" id="poster"/>
+        <hr>
+        Movie name:
+        <p id="movie_name"></p>
+        
+        Movie Description:<br>
+        <p id="movie_desc"></p>
+
+        Original Language:<br>
+        <p id="oirignal_language"></p>
+
+        Fecha de lanzamiento:<br>
+        <p id="release_date"></p>
+    </div>
+
+    <script>
+$('#searchBtn').click(function(){
+
+let query=$('#query').val();
+
+    $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=2c848b8b2d96da8da4cc64f627f7263a&query="+query+"&include_adult=false&language=en-US&page=1", function(data) {
+             'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYzg0OGI4YjJkOTZkYThkYTRjYzY0ZjYyN2Y3MjYzYSIsInN1YiI6IjY2MTcxZDJhZmRjMTQ2MDE0ODhkYTBhYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.duenIO66ctqD4GyynRjv0ZhtnWPc6K9QM93uYgSZhfI' 
+             'accept: application/json'
+            console.log(data.results[0].title);
+            $('#movie_name').html(data.results[0].title);
+            $('#movie_desc').html(data.results[0].overview); // Fix: Added '$' before ('#movie_name')
+            $('#oirignal_language').html(data.results[0].original_language); // Fix: Added '$' before ('#movie_name')
+            $('#release_date').html(data.results[0].release_date);
+            $('#poster').attr("src","https://image.tmdb.org/t/p/w500"+data.results[0].poster_path)
+        });
+})
+
+        
+    </script>
+
+    <style>
+        .poster {
+            width: 200px;
+        }
+    </style>
+</body>
+</html>
